@@ -1,0 +1,1 @@
+// Interface - Merging, Extend, TypeGuard
