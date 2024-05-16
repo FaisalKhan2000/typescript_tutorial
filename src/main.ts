@@ -11,7 +11,8 @@ import { setupCounter } from "./counter.ts";
 // import "./13typeUnknown.ts";
 // import "./14typeNever.ts";
 // import "./15modules.ts";
-import "./16typeGuarding.ts";
+// import "./16typeGuarding.ts";
+import "./17generics.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
