@@ -28,7 +28,7 @@ function getEmployee(): Person | DogOwner | Manager {
     return {
       name: "john",
     };
-  } else if (random < 0.33) {
+  } else if (random < 0.66) {
     return {
       name: "sarah",
       dogName: "Rex",
@@ -45,3 +45,29 @@ function getEmployee(): Person | DogOwner | Manager {
 
 const employee: Person | DogOwner | Manager = getEmployee();
 console.log(employee);
+
+// ## Challenge - Part 2
+
+// A type predicate in TypeScript is a special kind of return type for a function that not only returns a boolean, but also asserts that the argument is of a specific type if the function returns true. It's typically used in user-defined type guard functions to narrow down the type of a variable within a certain scope. The syntax is arg is Type, where arg is the function argument and Type is the type you're checking for.
+
+// - Define the isManager function Define a function called isManager that takes an object of type Person | DogOwner | Manager and returns a boolean. This function should check if the managePeople method exists on the object, and return true if it does and false if it doesn't. The return type of this function should be a type predicate: obj is Manager.
+// - Run your code to see if it works as expected. If employee is a Manager, you should see the output of the delegateTasks method in the console. If employee is a Person or DogOwner, there should be no output.
+
+// * WITHOUT TYPE PREDICATE
+// function isManager(obj: Person | DogOwner | Manager): boolean {
+//   return "managePeople" in obj;
+// }
+
+// * WITH TYPE PREDICATE
+
+// type predicate in TypeScript is a special kind of return type for a function that not only returns a boolean
+
+// obj is Manager IS A TYPE PREDICATE WHICH ONLY RETURNS BOOLEAN
+
+function isManager(obj: Person | DogOwner | Manager): obj is Manager {
+  return "managePeople" in obj;
+}
+
+if (isManager(employee)) {
+  employee.delegateTasks();
+}

@@ -2,9 +2,16 @@ import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
-import "./01basicTypes.ts";
-import "./02objects.ts";
-import "./03functions.ts";
+
+// import "./07interfaceChallenge.ts";
+// import "./08interfaceVsTypeAlias.ts";
+// import "./09tuples.ts";
+// import "./11enumChallenge.ts";
+// import "./12typeAssertion.ts";
+// import "./13typeUnknown.ts";
+// import "./14typeNever.ts";
+// import "./15modules.ts";
+import "./16typeGuarding.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
